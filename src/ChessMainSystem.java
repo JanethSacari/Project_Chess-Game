@@ -1,5 +1,6 @@
 package src;
 
+import boardgame.Board;
 import boardgame.Position;
 
 public class ChessMainSystem {
@@ -10,6 +11,8 @@ public class ChessMainSystem {
 
         Position position = new Position(2, 3);
         System.out.println(position);
+
+        Board board = new Board(8, 8);
 
     }
 
