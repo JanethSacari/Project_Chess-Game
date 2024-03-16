@@ -1,4 +1,4 @@
-package boardgame;
+package src.boardgame;
 
 public class Board {
 
@@ -27,4 +27,13 @@ public class Board {
     public void setColumns(int columns) {
         this.columns = columns;
     }
+
+    public Piece selectedPiece(int selectedRow, int selectedColumn){
+        return pieces[selectedRow][selectedColumn];
+    }
+
+    public Piece selectedPiece(Position selectedPosition) {
+        return pieces[selectedPosition.getRow()][selectedPosition.getColumn()];
+    }
+
 }
