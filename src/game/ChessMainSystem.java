@@ -10,7 +10,7 @@ public class ChessMainSystem {
 
         ChessMatch chessMatch = new ChessMatch();
         UserInterface.printBoard(chessMatch.getPieces());
-        
+
     }
 
 }
