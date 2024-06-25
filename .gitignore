@@ -2,16 +2,6 @@
 out/
 .idea/
 
-# Generated files
-.idea/**/contentModel.xml
-
-# User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
-
 #Compiled class file
 *.class
 
@@ -32,12 +22,3 @@ out/
 *.zip
 *.tar.gz
 *.rar
-
-# Sensitive or high-churn files
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
