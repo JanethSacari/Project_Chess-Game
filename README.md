@@ -54,6 +54,3 @@ Explique que eles verificam esses testes e porquê.
 Dar exemplos
 ```
 
-## 📦 Implantação
-
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
