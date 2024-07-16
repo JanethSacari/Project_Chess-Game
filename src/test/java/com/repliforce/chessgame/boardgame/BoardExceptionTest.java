@@ -1,66 +1,68 @@
 package com.repliforce.chessgame.boardgame;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 
 class BoardExceptionTest {
 
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     void setUp() {
     }
 
-    @org.junit.jupiter.api.AfterEach
+    @AfterEach
     void tearDown() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getMessage() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getLocalizedMessage() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getCause() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void initCause() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testToString() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void printStackTrace() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testPrintStackTrace() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testPrintStackTrace1() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void fillInStackTrace() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getStackTrace() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void setStackTrace() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void addSuppressed() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getSuppressed() {
     }
 }

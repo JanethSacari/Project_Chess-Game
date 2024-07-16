@@ -1,26 +1,28 @@
 package com.repliforce.chessgame.chess;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 
 class ColorTest {
 
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     void setUp() {
     }
 
-    @org.junit.jupiter.api.AfterEach
+    @AfterEach
     void tearDown() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void name() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void ordinal() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testToString() {
     }
 
@@ -32,31 +34,31 @@ class ColorTest {
     void testHashCode() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testClone() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void compareTo() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getDeclaringClass() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void valueOf() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testFinalize() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void values() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testValueOf() {
     }
 }

@@ -1,30 +1,32 @@
 package com.repliforce.chessgame.boardgame;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 
 class PieceTest {
 
-    @org.junit.jupiter.api.BeforeEach
+    @BeforeEach
     void setUp() {
     }
 
-    @org.junit.jupiter.api.AfterEach
+    @AfterEach
     void tearDown() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getBoard() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void possibleMoves() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void possibleMove() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void isThereAnyPossibleMove() {
     }
 }
