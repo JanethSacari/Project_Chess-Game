@@ -4,7 +4,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class PawnTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class QueenTest {
 
     @BeforeEach
     void setUp() {
@@ -51,10 +53,10 @@ class PawnTest {
     }
 
     @Test
-    void possibleMoves() {
+    void testToString() {
     }
 
     @Test
-    void testToString() {
+    void possibleMoves() {
     }
 }
