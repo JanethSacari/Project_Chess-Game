@@ -300,7 +300,7 @@ public class ChessMatch {
     }
 
     private void initialSetup() {
-        placeNewPiece('a', 1, new Rook(board, Color.BLUE));
+        placeNewPiece('a', 1, new Rook(board, selectColor("BLUE")));
         placeNewPiece('b', 1, new Knight(board, Color.BLUE));
         placeNewPiece('c', 1, new Bishop(board, Color.BLUE));
         placeNewPiece('d', 1, new Queen(board, Color.BLUE));
@@ -334,6 +334,10 @@ public class ChessMatch {
         placeNewPiece('g', 7, new Pawn(board, Color.RED, this));
         placeNewPiece('h', 7, new Pawn(board, Color.RED, this));
 
+    }
+
+    private Color selectColor(String color){
+        return Color.valueOf(color);
     }
 
 }
