@@ -33,6 +33,15 @@ class UserInterfaceTest {
     }
 
     @Test
+    public void testReadChessPositionInvalid() {
+        Scanner scanner = new Scanner("z9");
+
+        assertThrows(InputMismatchException.class, () -> {
+            UserInterface.readChessPosition(scanner);
+        });
+    }
+
+    @Test
     void printMatch() {
     }
 
