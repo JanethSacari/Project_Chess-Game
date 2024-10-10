@@ -42,6 +42,22 @@ class UserInterfaceTest {
     }
 
     @Test
+    public void testPrintCapturedPieces() throws Exception {
+        ChessPiece bluePiece = new ChessPiece(Color.BLUE, "Knight");
+        ChessPiece redPiece = new ChessPiece(Color.RED, "Queen");
+        List<ChessPiece> capturedPieces = Arrays.asList(bluePiece, redPiece);
+
+        String output = tapSystemOut(() -> {
+            UserInterface.printCapturedPieces(capturedPieces);
+        });
+        
+        assertTrue(output.contains("Blue:"));
+        assertTrue(output.contains("Red:"));
+        assertTrue(output.contains("Knight"));
+        assertTrue(output.contains("Queen"));
+    }
+
+    @Test
     void printMatch() {
     }
 
