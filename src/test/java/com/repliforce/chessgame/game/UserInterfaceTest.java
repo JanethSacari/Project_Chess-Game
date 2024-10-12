@@ -1,17 +1,15 @@
 package com.repliforce.chessgame.game;
 
+import com.repliforce.chessgame.chess.ChessMatch;
 import com.repliforce.chessgame.chess.ChessPiece;
 import com.repliforce.chessgame.chess.ChessPosition;
-import com.repliforce.chessgame.chess.Color;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
+import static com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOut;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserInterfaceTest {
@@ -47,30 +45,48 @@ class UserInterfaceTest {
     }
 
     @Test
-    public void testPrintCapturedPieces() throws Exception {
-        /*ChessPiece bluePiece = new ChessPiece(Color.BLUE, "Knight");
-        ChessPiece redPiece = new ChessPiece(Color.RED, "Queen");
-        List<ChessPiece> capturedPieces = Arrays.asList(bluePiece, redPiece);
-
-        String output = tapSystemOut(() -> {
-            UserInterface.printCapturedPieces(capturedPieces);
+    public void testClearScreen() throws Exception {
+        String result = tapSystemOut(() -> {
+            UserInterface.clearScreen();
         });
-        
-        assertTrue(output.contains("Blue:"));
-        assertTrue(output.contains("Red:"));
-        assertTrue(output.contains("Knight"));
-        assertTrue(output.contains("Queen"));*/
+        assertTrue(result.contains("\033[H\033[2J"));
     }
 
     @Test
-    void printMatch() {
+    public void testReadChessPosition_ValidInput() {
+        Scanner scanner = new Scanner("e2\n");
+        ChessPosition position = UserInterface.readChessPosition(scanner);
+        assertEquals('e', position.getColumn());
+        assertEquals(2, position.getRow());
     }
 
     @Test
-    void printBoard() {
+    public void testReadChessPosition_InvalidInput() {
+        Scanner scanner = new Scanner("z9\n");
+        assertThrows(InputMismatchException.class, () -> {
+            UserInterface.readChessPosition(scanner);
+        });
     }
 
     @Test
-    void testPrintBoard() {
+    public void testPrintBoard() throws Exception {
+        ChessPiece[][] pieces = new ChessPiece[8][8];
+        String result = tapSystemOut(() -> {
+            UserInterface.printBoard(pieces);
+        });
+        assertTrue(result.contains("  a b c d e f g h"));
+    }
+
+    @Test
+    public void testPrintMatch() throws Exception {
+        ChessMatch chessMatch = new ChessMatch();
+        List<ChessPiece> capturedPieces = new ArrayList<>();
+
+        String result = tapSystemOut(() -> {
+            UserInterface.printMatch(chessMatch, capturedPieces);
+        });
+
+        assertTrue(result.contains("Turn:"));
+        assertTrue(result.contains("Waiting player:"));
     }
 }
