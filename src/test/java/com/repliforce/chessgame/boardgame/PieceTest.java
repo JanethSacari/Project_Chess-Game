@@ -1,32 +1,72 @@
 package com.repliforce.chessgame.boardgame;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-class PieceTest {
+class MockPiece extends Piece {
+
+    public MockPiece(Board board) {
+        super(board);
+    }
+
+    @Override
+    public boolean[][] possibleMoves() {
+        boolean[][] moves = new boolean[3][3];
+        moves[0][0] = true;
+        moves[1][1] = true;
+        moves[2][2] = false;
+        return moves;
+    }
+}
+
+public class PieceTest {
+
+    private Board board;
+    private MockPiece piece;
 
     @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
-    @Test
-    void getBoard() {
+    public void setUp() {
+        board = new Board(3, 3);
+        piece = new MockPiece(board);
     }
 
     @Test
-    void possibleMoves() {
+    public void testConstructor() {
+        assertNotNull(piece.getBoard());
+        assertNull(piece.position);
     }
 
     @Test
-    void possibleMove() {
+    public void testPossibleMoveTrue() {
+        Position pos = new Position(0, 0);
+        assertTrue(piece.possibleMove(pos));
     }
 
     @Test
-    void isThereAnyPossibleMove() {
+    public void testPossibleMoveFalse() {
+        Position pos = new Position(2, 2);
+        assertFalse(piece.possibleMove(pos));
+    }
+
+    @Test
+    public void testIsThereAnyPossibleMoveTrue() {
+        assertTrue(piece.isThereAnyPossibleMove());
+    }
+
+    @Test
+    public void testIsThereAnyPossibleMoveFalse() {
+        Piece noMovesPiece = new Piece(board) {
+            @Override
+            public boolean[][] possibleMoves() {
+                return new boolean[3][3];
+            }
+        };
+        assertFalse(noMovesPiece.isThereAnyPossibleMove());
+    }
+
+    @Test
+    public void testGetBoard() {
+        assertEquals(board, piece.getBoard());
     }
 }
