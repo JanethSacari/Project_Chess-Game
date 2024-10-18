@@ -42,11 +42,8 @@ Explicar como executar os testes automatizados para este sistema.
 
 ### 🔩 Analise os testes de ponta a ponta
 
-Explique que eles verificam esses testes e porquê.
+Os testes unitários são feitos por função e classe, devendo ser executados usando o comando mvn clean install
 
-```
-Dar exemplos
-```
 
 ### ⌨️ E testes de estilo de codificação
 
