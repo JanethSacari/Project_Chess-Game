@@ -1,68 +1,29 @@
 package com.repliforce.chessgame.boardgame;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-class BoardExceptionTest {
+import static org.junit.jupiter.api.Assertions.*;
 
-    @BeforeEach
-    void setUp() {
-    }
+public class BoardExceptionTest {
 
-    @AfterEach
-    void tearDown() {
+    @Test
+    public void testBoardExceptionMessage() {
+        String errorMessage = "Error creating board";
+        BoardException exception = new BoardException(errorMessage);
+
+        assertEquals(errorMessage, exception.getMessage());
     }
 
     @Test
-    void getMessage() {
+    public void testBoardExceptionInheritance() {
+        BoardException exception = new BoardException("Test message");
+        assertTrue(exception instanceof RuntimeException);
     }
 
     @Test
-    void getLocalizedMessage() {
-    }
+    public void testBoardExceptionNoMessage() {
+        BoardException exception = new BoardException(null);
 
-    @Test
-    void getCause() {
-    }
-
-    @Test
-    void initCause() {
-    }
-
-    @Test
-    void testToString() {
-    }
-
-    @Test
-    void printStackTrace() {
-    }
-
-    @Test
-    void testPrintStackTrace() {
-    }
-
-    @Test
-    void testPrintStackTrace1() {
-    }
-
-    @Test
-    void fillInStackTrace() {
-    }
-
-    @Test
-    void getStackTrace() {
-    }
-
-    @Test
-    void setStackTrace() {
-    }
-
-    @Test
-    void addSuppressed() {
-    }
-
-    @Test
-    void getSuppressed() {
+        assertNull(exception.getMessage());
     }
 }
