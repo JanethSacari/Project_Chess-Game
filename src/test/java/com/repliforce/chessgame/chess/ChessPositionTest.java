@@ -1,38 +1,55 @@
 package com.repliforce.chessgame.chess;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import com.repliforce.chessgame.boardgame.Position;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-class ChessPositionTest {
+public class ChessPositionTest {
 
-    @BeforeEach
-    void setUp() {
-    }
+    @Test
+    public void testValidChessPosition() {
+        ChessPosition chessPosition = new ChessPosition('e', 4);
 
-    @AfterEach
-    void tearDown() {
+        assertEquals('e', chessPosition.getColumn());
+        assertEquals(4, chessPosition.getRow());
     }
 
     @Test
-    void getColumn() {
+    public void testInvalidChessPosition() {
+        assertThrows(ChessException.class, () -> {
+            new ChessPosition('z', 4);
+        });
+
+        assertThrows(ChessException.class, () -> {
+            new ChessPosition('e', 9);
+        });
+
+        assertThrows(ChessException.class, () -> {
+            new ChessPosition('x', 0);
+        });
     }
 
     @Test
-    void getRow() {
+    public void testToPosition() {
+        ChessPosition chessPosition = new ChessPosition('d', 5);
+
+        Position position = chessPosition.toPosition();
+        assertEquals(3, position.getRow());
+        assertEquals(3, position.getColumn());
     }
 
     @Test
-    void toPosition() {
+    public void testFromPosition() {
+        Position position = new Position(2, 2);
+        ChessPosition chessPosition = ChessPosition.fromPosition(position);
+
+        assertEquals('c', chessPosition.getColumn());
+        assertEquals(6, chessPosition.getRow());
     }
 
     @Test
-    void fromPosition() {
-    }
-
-    @Test
-    void testToString() {
+    public void testToString() {
+        ChessPosition chessPosition = new ChessPosition('f', 7);
+        assertEquals("f7", chessPosition.toString());
     }
 }
