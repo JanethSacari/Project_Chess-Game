@@ -1,9 +1,5 @@
 package com.repliforce.chessgame.chess;
 
-import com.repliforce.chessgame.chess.pieces.King;
-import com.repliforce.chessgame.chess.pieces.Pawn;
-import com.repliforce.chessgame.chess.pieces.Queen;
-import com.repliforce.chessgame.chess.pieces.Rook;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
