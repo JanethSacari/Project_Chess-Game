@@ -1,64 +1,24 @@
 package com.repliforce.chessgame.chess;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ColorTest {
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
+    @Test
+    void testEnumValues() {
+        // Verifica se o enum possui os valores esperados
+        assertEquals(4, Color.values().length, "Enum Color should have 4 values");
+        assertEquals(Color.BLUE, Color.valueOf("BLUE"));
+        assertEquals(Color.RED, Color.valueOf("RED"));
+        assertEquals(Color.WHITE, Color.valueOf("WHITE"));
+        assertEquals(Color.BLACK, Color.valueOf("BLACK"));
     }
 
     @Test
-    void name() {
-    }
-
-    @Test
-    void ordinal() {
-    }
-
-    @Test
-    void testToString() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void testEquals() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void testHashCode() {
-    }
-
-    @Test
-    void testClone() {
-    }
-
-    @Test
-    void compareTo() {
-    }
-
-    @Test
-    void getDeclaringClass() {
-    }
-
-    @Test
-    void valueOf() {
-    }
-
-    @Test
-    void testFinalize() {
-    }
-
-    @Test
-    void values() {
-    }
-
-    @Test
-    void testValueOf() {
+    void testEnumOrder() {
+        // Confirma que os valores estão na ordem esperada
+        Color[] expectedOrder = {Color.BLUE, Color.RED, Color.WHITE, Color.BLACK};
+        assertArrayEquals(expectedOrder, Color.values(), "Enum Color should have values in the correct order");
     }
 }
