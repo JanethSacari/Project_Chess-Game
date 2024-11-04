@@ -1,70 +1,28 @@
 package com.repliforce.chessgame.chess;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-class ChessExceptionTest {
+import com.repliforce.chessgame.boardgame.BoardException;
+import org.junit.jupiter.api.Test;
 
-    @BeforeEach
-    void setUp() {
-    }
+public class ChessExceptionTest {
 
-    @AfterEach
-    void tearDown() {
+    @Test
+    public void testChessExceptionMessage() {
+        String errorMessage = "Invalid chess move!";
+        ChessException exception = assertThrows(ChessException.class, () -> {
+            throw new ChessException(errorMessage);
+        });
+
+        // Verify that the message is correct
+        assertEquals(errorMessage, exception.getMessage());
     }
 
     @Test
-    void getMessage() {
-    }
+    public void testChessExceptionIsInstanceOfBoardException() {
+        ChessException exception = new ChessException("Test message");
 
-    @Test
-    void getLocalizedMessage() {
-    }
-
-    @Test
-    void getCause() {
-    }
-
-    @Test
-    void initCause() {
-    }
-
-    @Test
-    void testToString() {
-    }
-
-    @Test
-    void printStackTrace() {
-    }
-
-    @Test
-    void testPrintStackTrace() {
-    }
-
-    @Test
-    void testPrintStackTrace1() {
-    }
-
-    @Test
-    void fillInStackTrace() {
-    }
-
-    @Test
-    void getStackTrace() {
-    }
-
-    @Test
-    void setStackTrace() {
-    }
-
-    @Test
-    void addSuppressed() {
-    }
-
-    @Test
-    void getSuppressed() {
+        // Verify that ChessException is an instance of BoardException
+        assertTrue(exception instanceof BoardException);
     }
 }
