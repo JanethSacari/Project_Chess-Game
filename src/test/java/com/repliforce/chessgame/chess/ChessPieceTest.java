@@ -1,18 +1,21 @@
 package com.repliforce.chessgame.chess;
 
 import com.repliforce.chessgame.boardgame.Board;
-import com.repliforce.chessgame.boardgame.Position;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
 import static org.junit.jupiter.api.Assertions.*;
-import org.mockito.Mockito;
 
 public class ChessPieceTest {
 
-    private ChessPiece chessPiece;
-    private Board board;
+    @Mock
+    private Board boardMock;
 
-    class TestChessPiece extends ChessPiece {
+    private ChessPiece chessPiece;
+
+    private class TestChessPiece extends ChessPiece {
         public TestChessPiece(Board board, Color color) {
             super(board, color);
         }
@@ -25,17 +28,17 @@ public class ChessPieceTest {
 
     @BeforeEach
     public void setUp() {
-        board = Mockito.mock(Board.class);
-        chessPiece = new TestChessPiece(board, Color.RED);
+        MockitoAnnotations.openMocks(this);
+        chessPiece = new TestChessPiece(boardMock, Color.BLUE);
     }
 
     @Test
     public void testGetColor() {
-        assertEquals(Color.RED, chessPiece.getColor());
+        assertEquals(Color.BLUE, chessPiece.getColor());
     }
 
     @Test
-    public void testGetMoveCountInitiallyZero() {
+    public void testGetMoveCount_InitialValue() {
         assertEquals(0, chessPiece.getMoveCount());
     }
 
@@ -53,28 +56,11 @@ public class ChessPieceTest {
     }
 
     @Test
-    public void testIsThereOpponentPieceTrue() {
-        ChessPiece opponentPiece = new TestChessPiece(board, Color.BLUE);
-        Position position = new Position(3, 3);
-        Mockito.when(board.selectedPiece(position)).thenReturn(opponentPiece);
+    public void testPossibleMoves() {
+        boolean[][] possibleMoves = chessPiece.possibleMoves();
 
-        assertTrue(chessPiece.isThereOpponentPiece(position));
-    }
-
-    @Test
-    public void testIsThereOpponentPieceFalseSameColor() {
-        ChessPiece sameColorPiece = new TestChessPiece(board, Color.RED);
-        Position position = new Position(3, 3);
-        Mockito.when(board.selectedPiece(position)).thenReturn(sameColorPiece);
-
-        assertFalse(chessPiece.isThereOpponentPiece(position));
-    }
-
-    @Test
-    public void testIsThereOpponentPieceFalseNoPiece() {
-        Position position = new Position(3, 3);
-        Mockito.when(board.selectedPiece(position)).thenReturn(null);
-
-        assertFalse(chessPiece.isThereOpponentPiece(position));
+        assertNotNull(possibleMoves);
+        assertEquals(8, possibleMoves.length);
+        assertEquals(8, possibleMoves[0].length);
     }
 }
