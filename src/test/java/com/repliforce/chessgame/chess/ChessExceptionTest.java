@@ -14,7 +14,6 @@ public class ChessExceptionTest {
             throw new ChessException(errorMessage);
         });
 
-        // Verify that the message is correct
         assertEquals(errorMessage, exception.getMessage());
     }
 
@@ -22,7 +21,6 @@ public class ChessExceptionTest {
     public void testChessExceptionIsInstanceOfBoardException() {
         ChessException exception = new ChessException("Test message");
 
-        // Verify that ChessException is an instance of BoardException
         assertTrue(exception instanceof BoardException);
     }
 }

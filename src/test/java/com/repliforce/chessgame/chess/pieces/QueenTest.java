@@ -28,7 +28,6 @@ public class QueenTest {
     public void testPossibleMoves() {
         boolean[][] moves = queen.possibleMoves();
 
-        // All possible moves for a queen in the center of the board (3,3)
         assertTrue(moves[2][3]); // above
         assertTrue(moves[1][3]);
         assertTrue(moves[0][3]);
@@ -67,7 +66,6 @@ public class QueenTest {
 
     @Test
     public void testBlockedMoves() {
-        // Block some of the queen's moves with pieces of the same color
         board.placePiece(new Queen(board, Color.BLUE), new Position(4, 3)); // Block below
         board.placePiece(new Queen(board, Color.BLUE), new Position(3, 4)); // Block right
 
