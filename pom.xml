@@ -72,7 +72,7 @@
                         </goals>
                         <configuration>
                             <excludes>
-                                <exclude>com/repliforce/chessgame/chess/</exclude>
+                                <exclude>com/repliforce/chessgame/game/ChessMainSystem.java</exclude>
                             </excludes>
                         </configuration>
                     </execution>
