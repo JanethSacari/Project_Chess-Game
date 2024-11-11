@@ -30,8 +30,8 @@ public class PawnTest {
         board.placePiece(bluePawn, initialPosition);
 
         boolean[][] possibleMoves = bluePawn.possibleMoves();
-        assertTrue(possibleMoves[5][3], "Peão azul deve mover-se para frente uma casa.");
-        assertTrue(possibleMoves[4][3], "Peão azul deve mover-se duas casas à frente no primeiro movimento.");
+        assertTrue(possibleMoves[5][3], "Blue Pawn moves one position");
+        assertTrue(possibleMoves[4][3], "Blue Pawn moves two times");
     }
 
     @Test
@@ -40,8 +40,8 @@ public class PawnTest {
         board.placePiece(redPawn, initialPosition);
 
         boolean[][] possibleMoves = redPawn.possibleMoves();
-        assertTrue(possibleMoves[2][3], "Peão vermelho deve mover-se para frente uma casa.");
-        assertTrue(possibleMoves[3][3], "Peão vermelho deve mover-se duas casas à frente no primeiro movimento.");
+        assertTrue(possibleMoves[2][3], "Red Pawn moves one time ahead.");
+        assertTrue(possibleMoves[3][3], "Red Pawn moves two time ahead.");
     }
 
     @Test
@@ -54,7 +54,7 @@ public class PawnTest {
         board.placePiece(opponentPawn, opponentPosition);
 
         boolean[][] possibleMoves = bluePawn.possibleMoves();
-        assertTrue(possibleMoves[3][2], "Peão azul deve poder capturar o peão adversário vermelho na diagonal.");
+        assertTrue(possibleMoves[3][2], "Blue Pawn can capture one Pawn.");
     }
 
     @Test
@@ -67,7 +67,7 @@ public class PawnTest {
         board.placePiece(opponentPawn, opponentPosition);
 
         boolean[][] possibleMoves = redPawn.possibleMoves();
-        assertTrue(possibleMoves[4][4], "Peão vermelho deve poder capturar o peão adversário azul na diagonal.");
+        assertTrue(possibleMoves[4][4], "Red Pawn can capture one Blue Pawn.");
     }
 
     @Test
@@ -80,7 +80,7 @@ public class PawnTest {
         board.placePiece(blockingPawn, blockingPosition);
 
         boolean[][] possibleMoves = bluePawn.possibleMoves();
-        assertFalse(possibleMoves[5][3], "Peão azul não deve poder mover-se para uma posição ocupada por outra peça azul.");
+        assertFalse(possibleMoves[5][3], "Blue Pawn can not capture another Blue Pawn.");
     }
 
     @Test
@@ -93,6 +93,6 @@ public class PawnTest {
         board.placePiece(blockingPawn, blockingPosition);
 
         boolean[][] possibleMoves = redPawn.possibleMoves();
-        assertFalse(possibleMoves[2][3], "Peão vermelho não deve poder mover-se para uma posição ocupada por outra peça vermelha.");
+        assertFalse(possibleMoves[2][3], "Red Pawn can not capture another Red Pawn.");
     }
 }
