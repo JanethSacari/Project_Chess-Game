@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BoardTest {
-
     private Board board;
 
     @BeforeEach
@@ -144,6 +143,21 @@ public class BoardTest {
 
         Exception exception = assertThrows(BoardException.class, () -> {
             board.thereIsAPiece(invalidPosition);
+        });
+        assertEquals("Position not on the board", exception.getMessage());
+    }
+
+    @Test
+    public void testSelectedPieceEmptyPosition() {
+        Piece selectedPiece = board.selectedPiece(2, 3);
+
+        assertNull(selectedPiece);
+    }
+
+    @Test
+    public void testSelectedPieceInvalidPosition2() {
+        Exception exception = assertThrows(BoardException.class, () -> {
+            board.selectedPiece(10, 10);
         });
         assertEquals("Position not on the board", exception.getMessage());
     }
