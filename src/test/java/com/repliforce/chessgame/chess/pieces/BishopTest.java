@@ -4,10 +4,42 @@ import com.repliforce.chessgame.boardgame.Board;
 import com.repliforce.chessgame.boardgame.Position;
 import com.repliforce.chessgame.chess.ChessPiece;
 import com.repliforce.chessgame.chess.Color;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BishopTest {
+
+    private Board board;
+    private Bishop bishop;
+
+    @BeforeEach
+    public void setUp() {
+        board = new Board(8, 8);
+        bishop = new Bishop(board, Color.WHITE);
+    }
+
+    @Test
+    public void testPossibleMoves_CaptureOpponentPiece() {
+        Position bishopPosition = new Position(4, 4);
+        board.placePiece(bishop, bishopPosition);
+
+        Bishop opponentBishop = new Bishop(board, Color.BLACK);
+        Position opponentPosition = new Position(3, 3);
+        board.placePiece(opponentBishop, opponentPosition);
+
+        boolean[][] possibleMoves = bishop.possibleMoves();
+
+        assertTrue(possibleMoves[3][3], "Bishop should be able to capture opponent piece at (3, 3)");
+    }
+
+    @Test
+    public void testToString() {
+        Board board = new Board(8, 8);
+        Bishop bishop = new Bishop(board, Color.WHITE);
+
+        assertEquals("B", bishop.toString(), "Bishop's toString method should return 'B'");
+    }
 
     @Test
     void testPossibleMoves_BishopInCenterOfEmptyBoard() {
@@ -94,4 +126,59 @@ class BishopTest {
         assertTrue(possibleMoves[6][2]);
     }
 
+    @Test
+    public void testPossibleMoves_CaptureOpponentPiece_NW() {
+        Position bishopPosition = new Position(4, 4);
+        board.placePiece(bishop, bishopPosition);
+
+        Bishop opponentBishop = new Bishop(board, Color.BLACK);
+        Position opponentPosition = new Position(3, 3);
+        board.placePiece(opponentBishop, opponentPosition);
+
+        boolean[][] possibleMoves = bishop.possibleMoves();
+
+        assertTrue(possibleMoves[3][3], "Bishop should be able to capture opponent piece at (3, 3)");
+    }
+
+    @Test
+    public void testPossibleMoves_CaptureOpponentPiece_NE() {
+        Position bishopPosition = new Position(4, 4);
+        board.placePiece(bishop, bishopPosition);
+
+        Bishop opponentBishop = new Bishop(board, Color.BLACK);
+        Position opponentPosition = new Position(3, 5);
+        board.placePiece(opponentBishop, opponentPosition);
+
+        boolean[][] possibleMoves = bishop.possibleMoves();
+
+        assertTrue(possibleMoves[3][5], "Bishop should be able to capture opponent piece at (3, 5)");
+    }
+
+    @Test
+    public void testPossibleMoves_CaptureOpponentPiece_SE() {
+        Position bishopPosition = new Position(4, 4);
+        board.placePiece(bishop, bishopPosition);
+
+        Bishop opponentBishop = new Bishop(board, Color.BLACK);
+        Position opponentPosition = new Position(5, 5);
+        board.placePiece(opponentBishop, opponentPosition);
+
+        boolean[][] possibleMoves = bishop.possibleMoves();
+
+        assertTrue(possibleMoves[5][5], "Bishop should be able to capture opponent piece at (5, 5)");
+    }
+
+    @Test
+    public void testPossibleMoves_CaptureOpponentPiece_SW() {
+        Position bishopPosition = new Position(4, 4);
+        board.placePiece(bishop, bishopPosition);
+
+        Bishop opponentBishop = new Bishop(board, Color.BLACK);
+        Position opponentPosition = new Position(5, 3);
+        board.placePiece(opponentBishop, opponentPosition);
+
+        boolean[][] possibleMoves = bishop.possibleMoves();
+
+        assertTrue(possibleMoves[5][3], "Bishop should be able to capture opponent piece at (5, 3)");
+    }
 }
