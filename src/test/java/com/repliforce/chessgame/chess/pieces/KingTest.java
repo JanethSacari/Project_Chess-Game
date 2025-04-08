@@ -129,4 +129,13 @@ class KingTest {
 
         assertTrue(possibleMoves[7][2]);
     }
+
+    @Test
+    void toStringReturnsCorrectRepresentation() {
+        Board board = new Board(8, 8);
+        ChessMatch chessMatch = new ChessMatch();
+        King king = new King(board, Color.WHITE, chessMatch);
+
+        assertEquals("K", king.toString());
+    }
 }
