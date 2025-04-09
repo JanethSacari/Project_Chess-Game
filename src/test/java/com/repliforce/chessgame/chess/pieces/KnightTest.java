@@ -10,6 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class KnightTest {
 
     @Test
+    void toStringReturnsCorrectSymbolForKnight() {
+        Board board = new Board(8, 8);
+        Knight knight = new Knight(board, Color.WHITE);
+
+        assertEquals("H", knight.toString());
+    }
+
+    @Test
     void testPossibleMoves_KnightInCenterOfEmptyBoard() {
         Board board = new Board(8, 8);
         Knight knight = new Knight(board, Color.WHITE);
