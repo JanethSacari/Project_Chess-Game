@@ -1,6 +1,7 @@
 # Chess Game
 
 Esse é um mini projeto com a aplicação de conhecimentos basicos em Java e orientação a objetos. Ele permite jogar Xadrez via terminal usando comandos de entrada como coordenadas.
+Ainda esta com testes em desenvolvimento...
 
 ## 🚀 Começando
 
@@ -18,27 +19,13 @@ Conhecimento em Jogo de Xadrez
 
 ### 🔧 Instalação
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
 
-Diga como essa etapa será:
-
-```
-Dar exemplos
-```
-
-E repita:
-
-```
-Até finalizar
-```
-
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
 run mvn clean install
 
 
 ## ⚙️ Executando os testes
 
-Explicar como executar os testes automatizados para este sistema.
+mvn clean install
 
 ### 🔩 Analise os testes de ponta a ponta
 
@@ -47,9 +34,5 @@ Os testes unitários são feitos por função e classe, devendo ser executados u
 
 ### ⌨️ E testes de estilo de codificação
 
-Explique que eles verificam esses testes e porquê.
 
-```
-Dar exemplos
-```
 
