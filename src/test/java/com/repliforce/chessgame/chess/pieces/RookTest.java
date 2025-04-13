@@ -84,4 +84,16 @@ class RookTest {
             assertTrue(moves[7][i], "Rook should move right.");
         }
     }
+
+    @Test
+    void toStringReturnsCorrectSymbolForWhiteRook() {
+        Rook rook = new Rook(board, Color.WHITE);
+        assertEquals("R", rook.toString());
+    }
+
+    @Test
+    void toStringReturnsCorrectSymbolForBlackRook() {
+        Rook rook = new Rook(board, Color.BLACK);
+        assertEquals("R", rook.toString());
+    }
 }
