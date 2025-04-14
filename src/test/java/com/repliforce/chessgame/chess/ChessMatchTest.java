@@ -32,4 +32,20 @@ class ChessMatchTest {
         });
     }
 
+    @Test
+    void noCheckMateWhenKingHasEscapeMoves() {
+        ChessMatch match = new ChessMatch();
+        match.performChessMove(new ChessPosition('e', 2), new ChessPosition('e', 4));
+        match.performChessMove(new ChessPosition('f', 7), new ChessPosition('f', 5));
+        match.performChessMove(new ChessPosition('d', 1), new ChessPosition('h', 5));
+        assertFalse(match.getCheckMate());
+    }
+
+    @Test
+    void checkMateNotDetectedWhenNoCheck() {
+        ChessMatch match = new ChessMatch();
+        match.performChessMove(new ChessPosition('e', 2), new ChessPosition('e', 4));
+        match.performChessMove(new ChessPosition('a', 7), new ChessPosition('a', 6));
+        assertFalse(match.getCheckMate());
+    }
 }
