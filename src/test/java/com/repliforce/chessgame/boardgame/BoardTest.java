@@ -5,6 +5,7 @@ import com.repliforce.chessgame.chess.Color;
 import com.repliforce.chessgame.chess.pieces.Pawn;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BoardTest {

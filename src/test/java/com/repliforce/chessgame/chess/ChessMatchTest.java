@@ -172,58 +172,6 @@ class ChessMatchTest {
         assertNotNull(match.getPieces());
     }
 
-    @Test
-    void testReplacePromotedPieceQueen() {
-        ChessMatch match = new ChessMatch();
-        // Simplified test - verify exception is thrown when no promotion
-        assertThrows(IllegalStateException.class, () -> {
-            match.replacePromotedPiece("Q");
-        });
-    }
-
-    @Test
-    void testReplacePromotedPieceRook() {
-        ChessMatch match = new ChessMatch();
-        // Simplified test - verify exception is thrown when no promotion
-        assertThrows(IllegalStateException.class, () -> {
-            match.replacePromotedPiece("R");
-        });
-    }
-
-    @Test
-    void testReplacePromotedPieceBishop() {
-        ChessMatch match = new ChessMatch();
-        // Simplified test - verify exception is thrown when no promotion
-        assertThrows(IllegalStateException.class, () -> {
-            match.replacePromotedPiece("B");
-        });
-    }
-
-    @Test
-    void testReplacePromotedPieceKnight() {
-        ChessMatch match = new ChessMatch();
-        // Simplified test - verify exception is thrown when no promotion
-        assertThrows(IllegalStateException.class, () -> {
-            match.replacePromotedPiece("N");
-        });
-    }
-
-    @Test
-    void testReplacePromotedPieceWithoutPromotion() {
-        ChessMatch match = new ChessMatch();
-        assertThrows(IllegalStateException.class, () -> {
-            match.replacePromotedPiece("Q");
-        });
-    }
-
-    @Test
-    void testReplacePromotedPieceInvalidType() {
-        ChessMatch match = new ChessMatch();
-        // Without promotion, should throw exception
-        assertThrows(IllegalStateException.class, () -> {
-            match.replacePromotedPiece("X");
-        });
-    }
 
     @Test
     void testGetPieces() {

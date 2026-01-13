@@ -1,11 +1,12 @@
 package com.repliforce.chessgame.chess.pieces;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import com.repliforce.chessgame.boardgame.Board;
 import com.repliforce.chessgame.boardgame.Position;
 import com.repliforce.chessgame.chess.Color;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class QueenTest {
 

@@ -1,15 +1,15 @@
 package com.repliforce.chessgame.chess.pieces;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.repliforce.chessgame.boardgame.Board;
 import com.repliforce.chessgame.boardgame.Position;
-import com.repliforce.chessgame.chess.Color;
 import com.repliforce.chessgame.chess.ChessMatch;
+import com.repliforce.chessgame.chess.Color;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PawnTest {
 

@@ -5,6 +5,7 @@ import com.repliforce.chessgame.boardgame.Position;
 import com.repliforce.chessgame.chess.ChessMatch;
 import com.repliforce.chessgame.chess.Color;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class KingTest {

@@ -3,8 +3,8 @@ package com.repliforce.chessgame.boardgame;
 import com.repliforce.chessgame.chess.ChessMatch;
 import com.repliforce.chessgame.chess.Color;
 import com.repliforce.chessgame.chess.pieces.Pawn;
-import com.repliforce.chessgame.chess.pieces.Rook;
 import com.repliforce.chessgame.chess.pieces.Queen;
+import com.repliforce.chessgame.chess.pieces.Rook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

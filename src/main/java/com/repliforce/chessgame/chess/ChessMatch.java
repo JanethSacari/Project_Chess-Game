@@ -4,6 +4,7 @@ import com.repliforce.chessgame.boardgame.Board;
 import com.repliforce.chessgame.boardgame.Piece;
 import com.repliforce.chessgame.boardgame.Position;
 import com.repliforce.chessgame.chess.pieces.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

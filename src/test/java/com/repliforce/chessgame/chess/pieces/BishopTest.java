@@ -6,6 +6,7 @@ import com.repliforce.chessgame.chess.ChessPiece;
 import com.repliforce.chessgame.chess.Color;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BishopTest {

@@ -1,9 +1,9 @@
 package com.repliforce.chessgame.chess;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.repliforce.chessgame.boardgame.BoardException;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ChessExceptionTest {
 

@@ -1,9 +1,9 @@
 package com.repliforce.chessgame.chess;
 
-import com.repliforce.chessgame.chess.pieces.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ReplacePromotedPieceTest {
 
