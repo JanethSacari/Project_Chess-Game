@@ -29,7 +29,7 @@ Um projeto educacional implementando um jogo de **Xadrez completo** em Java com 
 ### 📋 Pré-requisitos
 
 ```bash
-Java 11 ou superior
+Java 21 ou superior
 Maven 3.6 ou superior
 Git (opcional)
 ```
@@ -137,7 +137,7 @@ src/
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Linguagem:** Java 11+
+- **Linguagem:** Java 21+
 - **Build Tool:** Maven
 - **Testing Framework:** JUnit 5 (Jupiter)
 - **Padrão Arquitetural:** MVC
@@ -208,4 +208,3 @@ Para dúvidas ou problemas:
 
 **Última atualização:** Janeiro de 2026  
 **Status:** ✅ Completo e Pronto para Uso
-
