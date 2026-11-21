@@ -1,6 +1,6 @@
 # ♟️ Chess Game - Jogo de Xadrez em Java
 
-Um projeto educacional implementando um jogo de **Xadrez completo** em Java com suporte a todas as regras oficiais do jogo. Permite jogar Xadrez via terminal usando coordenadas.
+Um projeto educacional implementando um jogo de **Xadrez completo** em Java com suporte a todas as regras oficiais do jogo. Permite jogar Xadrez via terminal usando coordenadas ou pela interface gráfica JavaFX.
 
 ## 📋 Características
 
@@ -11,6 +11,10 @@ Um projeto educacional implementando um jogo de **Xadrez completo** em Java com 
 - **Castling (Roque)** - kingside e queenside
 - **En Passant** - captura especial de peão
 - **Pawn Promotion** - promoção de peão em 4 tipos de peças
+
+✅ **Duas interfaces para o mesmo motor**
+- Interface gráfica JavaFX com seleção de casas e destaque de movimentos possíveis
+- Interface de terminal mantida como alternativa
 
 ✅ **Arquitetura Profissional**
 - Padrão Model-View-Controller (MVC)
@@ -49,6 +53,10 @@ mvn clean install
 
 3. **Execute a aplicação**
 ```bash
+# Interface gráfica JavaFX
+mvn javafx:run
+
+# Interface de terminal
 mvn exec:java -Dexec.mainClass="com.repliforce.chessgame.game.ChessMainSystem"
 ```
 
@@ -129,7 +137,11 @@ src/
 │   │       └── King.java
 │   └── game/               # Interface e aplicação
 │       ├── ChessMainSystem.java
-│       └── UserInterface.java
+│       ├── UserInterface.java
+│       └── fx/             # Interface gráfica JavaFX
+│           ├── ChessFxApplication.java
+│           ├── ChessGameController.java
+│           └── ChessBoardView.java
 └── test/java/              # Testes abrangentes
 ```
 
