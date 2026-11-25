@@ -56,8 +56,8 @@ class ChessFxUiTest {
             GridPane board = (GridPane) view.getCenter();
             assertEquals(64, board.getChildren().size());
             assertEquals("P", squareAt(board, 6, 4).getText());
-            assertTrue(squareAt(board, 0, 0).getStyle().contains("#f0d9b5"));
-            assertTrue(squareAt(board, 0, 1).getStyle().contains("#b58863"));
+            assertTrue(squareAt(board, 0, 0).getStyle().contains("#ffffff"));
+            assertTrue(squareAt(board, 0, 1).getStyle().contains("#000000"));
 
             squareAt(board, 6, 4).fire();
             assertEquals(6, clickedRow.get());
