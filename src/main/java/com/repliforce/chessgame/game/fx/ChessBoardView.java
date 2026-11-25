@@ -15,8 +15,8 @@ import java.util.function.BiConsumer;
 
 public class ChessBoardView extends BorderPane {
 
-    private static final String LIGHT_SQUARE = "#f0d9b5";
-    private static final String DARK_SQUARE = "#b58863";
+    private static final String LIGHT_SQUARE = "#ffffff";
+    private static final String DARK_SQUARE = "#000000";
     private static final String POSSIBLE_SQUARE = "#a9c66e";
     private static final String SELECTED_SQUARE = "#f6f669";
 
@@ -80,7 +80,7 @@ public class ChessBoardView extends BorderPane {
                 }
 
                 String pieceColor = piece == null ? "#202a35"
-                        : piece.getColor() == Color.BLUE ? "#2457a6" : "#b33939";
+                        : piece.getColor() == Color.BLUE ? "#1d4ed8" : "#b33939";
                 square.setStyle("-fx-background-color: " + background
                         + "; -fx-text-fill: " + pieceColor
                         + "; -fx-font-size: 34px; -fx-font-weight: bold;"
