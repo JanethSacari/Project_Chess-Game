@@ -47,6 +47,40 @@ public class PawnTest {
     }
 
     @Test
+    public void bluePawnCannotMoveTwoStepsThroughOccupiedSquare() {
+        board.placePiece(bluePawn, new Position(6, 3));
+        board.placePiece(new Pawn(board, Color.RED, chessMatch), new Position(5, 3));
+
+        boolean[][] possibleMoves = bluePawn.possibleMoves();
+        assertFalse(possibleMoves[4][3], "Blue Pawn cannot jump over a piece.");
+    }
+
+    @Test
+    public void redPawnCannotMoveTwoStepsThroughOccupiedSquare() {
+        board.placePiece(redPawn, new Position(1, 3));
+        board.placePiece(new Pawn(board, Color.BLUE, chessMatch), new Position(2, 3));
+
+        boolean[][] possibleMoves = redPawn.possibleMoves();
+        assertFalse(possibleMoves[3][3], "Red Pawn cannot jump over a piece.");
+    }
+
+    @Test
+    public void bluePawnCannotMoveTwoStepsOutsideStartingRow() {
+        board.placePiece(bluePawn, new Position(5, 3));
+
+        boolean[][] possibleMoves = bluePawn.possibleMoves();
+        assertFalse(possibleMoves[3][3], "Blue Pawn can only use the two-step move from its starting row.");
+    }
+
+    @Test
+    public void redPawnCannotMoveTwoStepsOutsideStartingRow() {
+        board.placePiece(redPawn, new Position(2, 3));
+
+        boolean[][] possibleMoves = redPawn.possibleMoves();
+        assertFalse(possibleMoves[4][3], "Red Pawn can only use the two-step move from its starting row.");
+    }
+
+    @Test
     public void testBluePawnCaptureOpponent() {
         Position bluePawnPosition = new Position(4, 3);
         board.placePiece(bluePawn, bluePawnPosition);
