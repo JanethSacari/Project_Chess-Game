@@ -25,7 +25,12 @@ public class Pawn extends ChessPiece {
             }
             pos.setValues(position.getRow() - 2, position.getColumn());
             Position pos2 = new Position(position.getRow() - 1, position.getColumn());
-            if (getBoard().positionExists(pos) && !getBoard().thereIsAPiece(pos) && getBoard().positionExists(pos2) && getMoveCount() == 0) {
+            if (position.getRow() == 6
+                    && getBoard().positionExists(pos)
+                    && getBoard().positionExists(pos2)
+                    && getMoveCount() == 0
+                    && !getBoard().thereIsAPiece(pos2)
+                    && !getBoard().thereIsAPiece(pos)) {
                 moves[pos.getRow()][pos.getColumn()] = true;
             }
             pos.setValues(position.getRow() - 1, position.getColumn() - 1);
@@ -60,7 +65,12 @@ public class Pawn extends ChessPiece {
             }
             pos.setValues(position.getRow() + 2, position.getColumn());
             Position pos2 = new Position(position.getRow() + 1, position.getColumn());
-            if (getBoard().positionExists(pos) && !getBoard().thereIsAPiece(pos) && getBoard().positionExists(pos2) && getMoveCount() == 0) {
+            if (position.getRow() == 1
+                    && getBoard().positionExists(pos)
+                    && getBoard().positionExists(pos2)
+                    && getMoveCount() == 0
+                    && !getBoard().thereIsAPiece(pos2)
+                    && !getBoard().thereIsAPiece(pos)) {
                 moves[pos.getRow()][pos.getColumn()] = true;
             }
             pos.setValues(position.getRow() + 1, position.getColumn() - 1);
